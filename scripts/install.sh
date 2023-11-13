@@ -7,7 +7,8 @@ rm -rf /workspace/venv
 
 echo "Cloning A1111 repo to /workspace"
 cd /workspace
-git clone --depth=1 https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+git clone --depth=1 https://github.com/mosolab/stable-diffusion-webui.git
+git checkout dev
 
 echo "Installing Ubuntu updates"
 apt update
@@ -25,7 +26,7 @@ echo "Installing xformers"
 pip install --no-cache-dir xformers==0.0.22
 
 echo "Installing A1111 Web UI"
-wget https://raw.githubusercontent.com/ashleykleynhans/runpod-worker-a1111/main/install-automatic.py
+wget https://github.com/mosolab/runpod-worker-a1111/blob/dev/install-automatic.py
 python -m install-automatic --skip-torch-cuda-test
 
 echo "Cloning ControlNet extension repo"
