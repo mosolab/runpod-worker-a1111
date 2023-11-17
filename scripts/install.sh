@@ -7,7 +7,7 @@ rm -rf /workspace/venv
 
 echo "Cloning A1111 repo to /workspace"
 cd /workspace
-git clone -b dev https://github.com/mosolab/stable-diffusion-webui.git
+git clone -b train https://github.com/mosolab/stable-diffusion-webui.git
 
 
 echo "Installing Ubuntu updates"
@@ -21,7 +21,8 @@ source /workspace/venv/bin/activate
 
 echo "Installing Torch"
 pip install --no-cache-dir torch==2.0.1+cu118 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-
+echo "Installing ipython"
+pip install ipython
 echo "Installing xformers"
 pip install --no-cache-dir xformers==0.0.22
 
@@ -79,6 +80,11 @@ wget https://huggingface.co/ashleykleynhans/upscalers/resolve/main/lollypop.pth
 
 echo "Creating log directory"
 mkdir -p /workspace/logs
+
+echo "Train install"
+cd /workspace/stable-diffusion-webui/modules/train
+python train_install.py
+
 
 echo "Installing config files"
 cd /workspace/stable-diffusion-webui
