@@ -33,7 +33,8 @@ API_SCHEMA = {
             'sdapi/v1/interrogate',
             'sdapi/v1/load_lora',
             'sdapi/v1/del_lora',
-            'sdapi/v1/train_lora'
+            'sdapi/v1/train_lora',
+            'sdapi/v1/load_to_s3'
         ]
     }
 }
