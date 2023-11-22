@@ -11,7 +11,7 @@ from schemas.txt2img import TXT2IMG_SCHEMA
 from schemas.interrogate import INTERROGATE_SCHEMA
 
 BASE_URI = 'http://127.0.0.1:3000'
-TIMEOUT = 600
+TIMEOUT = 600000000
 
 session = requests.Session()
 retries = Retry(total=10, backoff_factor=0.1, status_forcelist=[502, 503, 504])
